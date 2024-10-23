@@ -19,6 +19,9 @@ class GithubPopularRepos extends Component {
     reposList: [],
     dataStatus: false,
   }
+  componentDidMount() {
+    this.setState({activeTabId: languageFiltersData[0].id}, this.getReposData)
+  }
   changeTabId = id => {
     this.setState({activeTabId: id}, this.getReposData)
   }
@@ -70,9 +73,7 @@ class GithubPopularRepos extends Component {
     const data = await response.json()
     this.onGetSuccess(data)
   }
-  componentDidMount() {
-    this.setState({activeTabId: languageFiltersData[0].id}, this.getReposData)
-  }
+
   renderLoadingView = () => (
     <div data-testid="loader" className="loader-container">
       <Loader type="ThreeDots" color="#0284c7" height={80} width={80} />

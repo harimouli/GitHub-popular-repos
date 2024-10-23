@@ -1,0 +1,12 @@
+.language-filter-button {
+  width: 90px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.active-language-button {
+  border-style: solid;
+  border-color: #0284c7;
+}
